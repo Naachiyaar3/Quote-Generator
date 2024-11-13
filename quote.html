@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    
+</head>
+<style>body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f4f8;
+    font-family: Arial, sans-serif;
+}
+
+.quote-container {
+    text-align: center;
+    width: 60%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #333;
+}
+
+#quote {
+    font-size: 1.5em;
+    color: #555;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+<body>
+    <div class="quote-container">
+        <h1>Random Quote Generator</h1>
+        <p id="quote">Click the button to generate a new quote!</p>
+        <button id="new-quote">New Quote</button>
+    </div>
+    <script>
+        const quotes = [
+    "The best way to predict the future is to invent it.",
+    "Life is 10% what happens to us and 90% how we react to it.",
+    "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    "What you do today can improve all your tomorrows.",
+    "Don’t watch the clock; do what it does. Keep going.",
+    "Believe you can and you're halfway there.",
+    "It always seems impossible until it’s done.",
+    "The only limit to our realization of tomorrow is our doubts of today."
+];
+
+// Function to generate a new quote
+function generateQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").textContent = quotes[randomIndex];
+}
+
+// Add event listener to the button
+document.getElementById("new-quote").addEventListener("click", generateQuote);
+    </script>
+</body>
+</html>
